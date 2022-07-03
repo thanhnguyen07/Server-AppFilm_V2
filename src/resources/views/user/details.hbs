@@ -1,0 +1,35 @@
+<div class="mt4 ml-4">
+    {{#each user}}
+        <h5 style="margin-top: 10px;">ID User: {{this._id}}</h5>
+        <p>Name: {{this.name}}<br> Email: {{this.email}} </p>
+
+        <p class="key" >List Cmt:</p>
+        <ul>
+            {{#each this.listCmt}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ul>
+
+        <p class="key">List History:</p>
+        <ul>
+            {{#each this.listHistory}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ul>
+
+        <p class="key">List Like:</p>
+        <ul>
+            {{#each this.listLike}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ul>
+        
+        <p class="key">List Play:</p>
+        <ul>
+            {{#each this.listPlay}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    {{/each}}
+</div>
+

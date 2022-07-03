@@ -1,0 +1,70 @@
+<div class="mt-4 ml-4 mb-4">
+  <button>
+    <a href="films/create" class="btn-create">Create</a>
+  </button>
+</div>
+<div class="" style="padding: 10px;">
+    <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">STT</th>
+            <th scope="col">ID Film</th>
+            <th scope="col">Name English</th>
+            <th scope="col">Name Vn</th>
+            <th scope="col">Time Create</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each film}}
+            <tr>
+                <th scope="row">{{sum @index 1}}</th>
+                <td>{{this._id}}</td>
+                <td>{{this.nameEn}}</td>
+                <td>{{this.nameVn}}</td>
+                <td>{{this.createdAt}}</td>
+                <td>
+                    <a href="/films/{{this._id}}" class="btn btn-link">Details</a>
+                    <a href="" class="btn btn-link" data-toggle="modal" data-target="#delete-film" data-id="{{this._id}}">Delete</a>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="delete-film" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Film</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-delete-film" class="btn btn-danger" type="button">Delete</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<form name="delete-film-form" method="POST"></form>
+
+<script>
+    var filmId;
+    var deleteForm = document.forms['delete-film-form']
+    var deleteFilm= document.getElementById('btn-delete-film')
+
+    document.addEventListener('DOMContentLoaded', function() {
+        $('#delete-film').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) 
+            filmId = button.data('id') 
+        })
+    });
+    deleteFilm.onclick = () => {
+        deleteForm.action = '/films/'+filmId+'?_method=DELETE'
+        deleteForm.submit();
+    }
+</script>

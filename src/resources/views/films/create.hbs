@@ -1,0 +1,71 @@
+<div class="mt-4 container">
+    <form method="post" action="/films/store">
+    <div class="form-group">
+        <label for="nameEn">Name English</label>
+        <input type="text" class="form-control" id="nameEn" name="nameEn">
+    </div>
+    <div class="form-group">
+        <label for="nameVn">Name VN</label>
+        <input type="text" class="form-control" id="nameVn" name="nameVn">
+    </div>
+    {{!-- <div class="form-group">
+        <label for="content">Content</label>
+        <input type="text" class="form-control" id="content" name="content">
+    </div> --}}
+    <div class="form-group">
+        <label for="content">Content</label>
+        <textarea class="form-control" id="content" rows="3" name="content"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="idTrailer">Trailer ID</label>
+        <input type="text" class="form-control" id="idTrailer" name="idTrailer">
+    </div>
+    <div class="form-group">
+        <label for="idImageVideo">Id Image Video</label>
+        <input type="text" class="form-control" id="idImageVideo" name="idImageVideo">
+    </div>
+    <div class="form-group">
+        <label for="releaseDay">Release Day</label>
+        <input type="text" class="form-control" id="releaseDay" name="releaseDay">
+    </div>
+    <div class="form-group">
+        <label for="imagesNumber">Images Number </label>
+        <input type="number" class="form-control" id="imagesNumber" name="imagesNumber">
+    </div>
+    <div class="form-group">
+        <label for="point">Point </label>
+        <input type="number" class="form-control" id="point" name="point">
+    </div>
+    <div class="form-group">
+        <label for="durations">Durations </label>
+        <input type="number" class="form-control" id="durations" name="durations">
+    </div>
+    <div class="form-group">
+        <label for="status">Status</label>
+        <select class="form-control" id="status" name="status">
+            <option>VietSub</option>
+            <option>Thuyết Minh</option>
+            <option>Trailer</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="country">Country</label>
+        <select class="form-control" id="country" name="country">
+            <option>Mỹ</option>
+            <option>Nhật Bản</option>
+            <option>Anh</option>
+            <option>Trung Quốc</option>
+            <option>Pháp</option>
+            <option>Việt Nam</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="type">Type</label>
+        <select class="form-control" id="type" name="type">
+            <option>Phim Lẻ</option>
+            <option>Phim Bộ</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>

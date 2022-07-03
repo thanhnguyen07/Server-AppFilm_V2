@@ -1,0 +1,23 @@
+<div class="mt4 ml-4 view-details">
+    {{#each film}}
+        <h5 style="margin-top: 10px;">ID User: {{this._id}}</h5>
+        <p>Name English: {{this.nameEn}} <br> Name VN: {{this.nameVn}} <br> Content: {{this.content}}<br> Country: {{this.country}} </p>
+        <p>Release Day: {{this.releaseDay}} <br> Type: {{this.type}} <br> Trailer: {{this.idTrailer}} <br> Status: {{this.status}} </p>
+        <p> Images Number: {{this.imagesNumber}} <br> Point: {{this.point}}<br> Cast ID: {{this.castId}} <br> Durations: {{this.durations}} <br> Id Image Video: {{this.idImageVideo}}</p>
+        <br>
+        <p>Genre: </p>
+            <ul>
+            {{#each this.genre}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ul>
+        <p>List Cmt:</p>
+        <ul>
+            {{#each this.listCmt}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ul>
+
+    {{/each}}
+</div>
+
